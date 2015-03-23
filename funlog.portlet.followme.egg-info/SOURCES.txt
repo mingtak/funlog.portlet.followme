@@ -1,0 +1,17 @@
+README.txt
+setup.py
+funlog/__init__.py
+funlog.portlet.followme.egg-info/PKG-INFO
+funlog.portlet.followme.egg-info/SOURCES.txt
+funlog.portlet.followme.egg-info/dependency_links.txt
+funlog.portlet.followme.egg-info/entry_points.txt
+funlog.portlet.followme.egg-info/namespace_packages.txt
+funlog.portlet.followme.egg-info/not-zip-safe
+funlog.portlet.followme.egg-info/requires.txt
+funlog.portlet.followme.egg-info/top_level.txt
+funlog/portlet/__init__.py
+funlog/portlet/followme/__init__.py
+funlog/portlet/followme/followme.py
+funlog/portlet/followme/tests/__init__.py
+funlog/portlet/followme/tests/base.py
+funlog/portlet/followme/tests/test_portlet.py

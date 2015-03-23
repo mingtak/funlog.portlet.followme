@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<portlets>
+
+ <!-- Portlet type registrations -->
+
+ <portlet
+   addview="funlog.portlet.followme.FollowMe"
+   title="Follow me"
+   description="Follow me portlet for funlog"
+   />
+
+</portlets>

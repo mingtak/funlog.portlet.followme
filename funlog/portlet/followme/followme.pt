@@ -1,0 +1,34 @@
+<div id="portlet_followme" class="system_widget_list" i18n:domain="funlog.portlet.followme">
+
+
+
+<h3 class="widget_title" i18n:translate="">Follw me</h3>
+
+<div tal:define="brain context/getFollowMe;
+                 brain python:brain[0:] if brain is not None else [];
+                 shuffle python:modules['random'].shuffle(brain);
+                 isAnonymous context/isAnonymous">
+
+  <div tal:repeat="item python:brain[0:8]">
+    <a class="url" tal:attributes="href string:${context/portal_url}/${item/blogId}">
+      <img class="leadimage" tal:condition="python:type(item.imageSize) == type(int())"
+           tal:attributes="src string:${item/getURL}/@@images/leadImage/tile" />
+      <img class="leadimage" tal:condition="python:type(item.imageSize) != type(int())"
+           tal:attributes="src string:${item/getURL}/site/anonymous_image/@@images/image/tile" />
+
+    </a>
+    <p class="title" tal:content="item/Title" />
+  </div>
+  <p class="total">
+    <span i18n:translate="">Total follows:</span>
+    <span tal:content="python:len(brain)" />
+  <p>
+
+<tal:isManager condition="not:context/@@isManager">
+  <a class="join" href="./followMe" tal:condition="python:not isAnonymous and not view.checkInList()" i18n:translate="">Follow Me</a>
+  <a class="cancel" href="./followMe" tal:condition="python:not isAnonymous and view.checkInList()" i18n:translate="">Cancel</a>
+  <a class="anonymous" href="/facebookLogin" tal:condition="isAnonymous" i18n:translate="">Follow</a>
+</tal:isManager>
+
+</div>
+</div>
